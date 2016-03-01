@@ -1,6 +1,6 @@
 > topic:keep main
 
   + ~emohello
-  - Hello World
+  -  Hey there, My name is Al and I'm your new best friend. 
 
 < topic

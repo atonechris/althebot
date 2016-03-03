@@ -1,20 +1,12 @@
-## SuperScript Bootstrap
+## Al the Chatbot
 
-Welcome to the wonderful world of building chatbots!
+Al is a chatbot that will suggest things to do, and help you do them.
 
 
-### Getting the enviroment setup
+Starting database `sudo mongod`
 
-We will assume you already have Node and NPM installed. To use SuperScript you need to make sure you have Node 0.12.x installed. Later version do not work yet.
 
-SuperScript also requires MongoDB - You can download and install Mongo from `https://www.mongodb.org/downloads#production`
-
-Once installed you run it from the command line by `sudo mongod`
-
-You can start by cloneing this repo locally using the command 
-`git clone https://github.com/silentrob/hello-superscript.git`
-
-You will then want to run `npm install` This will load in all the dependencies. 
+You will then want to run `npm install` This will load in all the dependencies.
 
 This example will show you how to create a basic trigger, topic and plugin, and use 2 sample clients. (Telnet and Slack)
 
@@ -24,7 +16,7 @@ This example will show you how to create a basic trigger, topic and plugin, and 
 * You will want to make sure you have `mongo` running, all the conversation and user data is stored in mongo, namely, `Gambits`, `Replies`, `Topics` and `Users`. If you don't yet have Mongo Running, see the first section.
 
 ### Compile conversation data
-* Lets compile our first trigger and store that in mongo. I already created the topic folder and ss file see `./topics/main.ss` 
+* Lets compile our first trigger and store that in mongo. I already created the topic folder and ss file see `./topics/main.ss`
 
 We can compile the data two ways, either by typing `parse` from the command line which generates a intermediate json representation that we can manually import, or by doing a parse and load combind step. Lets do the latter as it removes the need to manually import the JSON file ourselves.
 
@@ -65,5 +57,3 @@ Some of the more advanced client logic is deliberately left upto you to build, t
 Lets fire up the client by running `node telnet.js`
 
 And in a new window lets chat with it by running `telnet 127.0.0.1 2000`
-
-

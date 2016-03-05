@@ -1,19 +1,17 @@
 > topic:keep main
 
   + ~emohello
-  -  Hey there, My name is Al and I'm your new best friend. \n
-  ^ Its my job to talk to you as much as possible to learn about \n
-  ^ the things you like, and suggest them to you when you're \n
-  ^ unsure of what to do.\n
-  ^ I can also help you book tickets, get reservations and pay for things before you \n
-  ^ get there. Lastly I can help get you there, if you need. What's your name? (Reply "my name is *") {topic=name}
+  -  Hey there, My name is Al and I help you find fun things around you. Its my job to create fun.\n
+  ^ I can help you book tickets, get reservations and help you \n
+  ^ get there. Lastly I can make suggestions based on what I've learned.\n
+  ^  What's your name? (Reply "my name is *") {topic=billing}
 
 < topic
 
 > topic:keep name
 
-  + My name is <
-  - Cool, my name is Al.
+  + My name is *
+  - Nice to meet you <cap1>, my name is Al. What are your favorite things to do?
 
   ?:Will you do *
   - Hmmm, let me get back to you on that.
@@ -239,7 +237,19 @@
 - can you?
 
 + yes
-- Great, Should we use your card ending in 4325?
+- Great, How would you like to pay? Options are (credit card, paypal, venmo, or cash at location)
 
 
+< topic
+
+
+> topic:keep billing
+
++ (cash at location|credit card|paypal|venmo)
+- Would you like to enter your {@__payments__}  information here or go to our website. Both are completely secure?
++ __payments__
+- credit card
+- cash at location
+- venmo
+- paypal
 < topic

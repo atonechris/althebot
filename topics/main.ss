@@ -1,17 +1,47 @@
-> topic:keep main
+> topic:keep name
 
   + ~emohello
   -  Hey there, My name is Al and I help you find fun things around you. Its my job to create fun.\n
-  ^ I can help you book tickets, get reservations and help you \n
-  ^ get there. Lastly I can make suggestions based on what I've learned.\n
-  ^  What's your name? (Reply "my name is *") {topic=billing}
+  ^ I can help you book tickets, get reservations and help you get there.
+  ^ Lastly I can make suggestions based on what I've learned. What's your name? (Reply "My name is *")
+
+  + my name is *1
+  - Nice to meet you <cap>, my name is Al. I want to learn more about things you like to do.\n
+  ^ Can we do this now?
+
+  + yes
+  - Great, do you like to go out in a group or solo/couple?{topic=likes}
+
+  + no
+  - Okay, what would you like to do? (don't know? Just reply so!){topic=wantto}
+
 
 < topic
 
-> topic:keep name
+> topic:keep likes
 
-  + My name is *
-  - Nice to meet you <cap1>, my name is Al. What are your favorite things to do?
++ group
+- cool, me too! Great is your group typically 3 to 5 people or like 7 to 10?
+
++ solo
++ couple
+- cool, me too! Do you know any single bots btw?
+
+
++ i like *2, *3, *4
+- Great to know, I like <cap2>, <cap3>, <cap4> too. Any thing else? (reply yes or no)
+
++ ~days
+- okay that works. Use that thig?
+
+//
++ no
+- Great, I only need to know a few more things. Where do you live? (Reply zip)
+
+//
++ yes
+- Well what do you want to do?
+
 
   ?:Will you do *
   - Hmmm, let me get back to you on that.
@@ -25,9 +55,7 @@
 + good
 - Great, do you have any preferences of what you want to do?
 
-//
-+ no
-- Well what do you want to do?
+
 
 // User asks cost
 + how much is it
@@ -40,6 +68,10 @@
 - Good :) you?
 - Great! You?
 - I'm fine, thanks for asking!
+
+
+< topic
+> topic:keep wantto
 
 // User agreed to buy
 + i want to go out
@@ -204,28 +236,8 @@
 
 //    Days of the week
 
-+ monday
-@ today
++ concept: ~days (monday tuesday wednesday thursday friday saturday sunday)
 
-+ tuesday
-@ today
-
-+ wednesday
-@ today
-
-+ thursday
-@ today
-
-+ friday
-@ today
-
-+ saturday
-@ today
-
-+ sunday
-@ today
-
-//    Weeks
 
 + next week
 - Which day?
